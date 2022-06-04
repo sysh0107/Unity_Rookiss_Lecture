@@ -5,7 +5,9 @@ using UnityEngine;
 public class Managers : MonoBehaviour
 {
     static Managers s_instance;
-    public static Managers instance { get { Init(); return s_instance; } }
+    static Managers Instance { get { Init(); return s_instance; } }
+    InputManger _input = new InputManger();
+    public static InputManger Input { get { return Instance._input; } }
 
     void Start()
     {
@@ -14,7 +16,7 @@ public class Managers : MonoBehaviour
 
     void Update()
     {
-        
+        _input.OnUpdate();
     }
 
     static void Init()
