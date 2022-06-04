@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Managers : MonoBehaviour
 {
-    static Managers Instance;
-    public static Managers GetInstance() { Init(); return Instance; }
+    static Managers s_instance;
+    public static Managers instance { get { Init(); return s_instance; } }
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class Managers : MonoBehaviour
 
     static void Init()
     {
-        if(Instance == null)
+        if(s_instance == null)
         {
             GameObject go = GameObject.Find("@Managers");
             if(go == null)
@@ -28,7 +28,7 @@ public class Managers : MonoBehaviour
                 go.AddComponent<Managers>();
             }
             DontDestroyOnLoad(go);
-            Instance = go.AddComponent<Managers>();
+            s_instance = go.AddComponent<Managers>();
         }
         
     }
