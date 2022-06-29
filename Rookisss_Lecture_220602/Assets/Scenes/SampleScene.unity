@@ -658,7 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7251555201933869876, guid: 7a35f75b936dc40b8994a3608e6bd427, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: UnityChan
       objectReference: {fileID: 0}
+    - target: {fileID: 7251555201943269810, guid: 7a35f75b936dc40b8994a3608e6bd427, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1303ad8a60b7441f9c43179bb835fc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a35f75b936dc40b8994a3608e6bd427, type: 3}

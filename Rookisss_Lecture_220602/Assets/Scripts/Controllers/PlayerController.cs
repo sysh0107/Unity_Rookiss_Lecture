@@ -36,7 +36,16 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 10 * Time.deltaTime);
             }
         }
-
+        if (_moveToDest)
+        {
+            Animator anim = GetComponent<Animator>();
+            anim.Play("RUN");
+        }
+        else
+        {
+            Animator anim = GetComponent<Animator>();
+            anim.Play("WAIT");
+        }
         
     }
 
@@ -72,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseClicked(Define.MouseEvent evt)
     {
-        if (evt != Define.MouseEvent.Click) return;
+        // if (evt != Define.MouseEvent.Click) return;
 
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
